@@ -5,6 +5,9 @@ define macdefaults($domain, $key, $value = false, $type = 'string', $action = 'w
   if $runas != 'root' {
     $user = $::current_user
   }
+  else {
+    $user = 'root'
+  }
 
   if $currenthost {
     $writecommand = '/usr/bin/defaults -currentHost write'
